@@ -1,0 +1,30 @@
+git config —global alias.st ‘status’  设置别名
+
+git clone :克隆指定url的代码，后可以接目录 例如：
+	git clone https://github.com/jquery/jquery.git e:/myJQuery/
+
+git pull : 拉代码，将版本库里的代码拉到本地，并自动合并冲突
+
+git status: 查看当前状态，会列出项目未追踪的文件和暂存区的文件
+
+git add: 将未追踪的文件，或者不在暂存区的文件加入暂存区
+	git add .    git add *.java
+
+git reset: 将暂存区文件退回工作区
+	git reset HEAD *
+
+git commit  提交暂存区的文件，按照招行要求的规则
+	git commit -m “#comment  xxxxxxxx”
+
+git log: 显示提交记录
+
+git diff <brach-name> 显示分支上的代码变更内容
+
+git push  将commit的代码提交到版本库
+
+场景1：取消commit
+	git reset HEAD~1 取消最新一期的commit
+	HEAD后面的数字写几就是取消几次commit（注意！commit需要为push之前的）
+
+场景2:回退到某一个历史版本
+	git revert HEAD~1 这种会新生成一个commit记录，由于我们有钩子限制格式，不推荐使用
