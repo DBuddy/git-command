@@ -28,3 +28,9 @@ git push  将commit的代码提交到版本库
 
 场景2:回退到某一个历史版本
 	git revert HEAD~1 这种会新生成一个commit记录，由于我们有钩子限制格式，不推荐使用
+
+场景3:如何修改历史commit的message
+git rebase -i 版本编号  注意：此时的版本编号需要取你要修改的commit的前一个版本
+    接着会显示出vim界面，按i进入编辑模式，将想修改的那条commit前的pick改为edit，再esc :wq
+    接下来输入git commit --amend  按i进入编辑模式，修改commit message 再ecs :wq 保存退出
+    输入git rebase --continue 完成修改
